@@ -1,0 +1,40 @@
+
+
+
+1. Blank Solution açýlýr.
+2. "YZL5155_LibraryProject.Models" adýnda Class Library (.Net Framework) türünde katman eklenir.
+	Not: Katman isimlendiriken "solution_name.layer_name" olarak isimlendirilmeis gerekmektedir.
+	2.1. Enums klasörü açýlýr.
+	2.2. Enums => Status ve Role enum'larý eklenir.
+	2.3. Entities klasörü açýlýr.
+	2.4. Entities => Abstract klasörü açýlýr.
+	2.5. Entities => Abstract => BaseEntity.cs açýlýr.
+	2.6. Entities => Concrete klasörü açýlýr.
+	2.7. Entities => Concrete => uygulamada ihityaç duyulan varlýklar yaratýlýr.
+3. "YZL5155_LibraryProject.Infrastructure" adýnda Class Library (.Net Framework) türünde katman eklenir.
+	Not: Bu katmana Models katmaný referance olarak eklenir.
+	Not: Bu katmanda veri tabaný ile iletiþime geçilerek CRDU operasyonlarý yürütüleceðinden Ef bu katmana yüklenmelidir.
+	3.1. EntityTypeConfiguration klasörü açýlýr.
+	3.2. EntityTypeConfiguration => Abstract klasörü açýlýr.
+	3.3. EntityTypeConfiguration => Abstract => BaseMap.cs sýnýfý açýlýr.
+	3.4. EntityTypeConfiguration => Concrete klasörü açýlýr.
+	3.5. EntityTypeConfiguration => Concrete => Entity'lerin konfigurasyonlarý yapýlýr.
+	3.6. Context klasörü açýlýr.
+	3.7. Context => AppDbContext.cs sýnýfý açýlýr.
+		Not: Migration iþlemleri yapýlýr. Migration yapýlýrken console ekranýnda default projecet "YZL5155_LibraryProject.Infrastructure" seçilir.
+	3.8. Repositories klasörü açýlýr.
+	3.9. Repositories => Abstract klasörü açýlýr.
+	3.10. Repositories => Abstract => KernelRepository.cs sýnýfý açýlýr.
+	3.11. Repositories => Interfaces klasörü açýlýr.
+	3.12. Interfaces => IBaseRepository.cs açýlýr.
+	3.13. Repositories => Conrete klasörü açýlýr.
+	3.14. Repositories => Conrete => Entity type repository'ler oluþturulur.
+4. "YZL5155_LibraryProject.UI" adýnda Windows Form App (.Net Framework) türünde katman eklenir.
+	4.1. "YZL5155_LibraryProject.Models" ve "YZL5155_LibraryProject.Infrastructure" katmanlarý referances olarak verilir.
+	4.2. EF kurulur.
+	4.3. Bu katman set as startup project olarak seçilir.
+	4.4. AdminArea klasörü açýlýr.
+		4.4.1. AdminHome adýnda Form eklenir.
+		4.4.2. CategoryPage adýnda Form eklenir.
+		Not: Admin'Ýn yetkilerine göre bütün entity'lerin crud operasyonlarýný yürütmek için Form'lar açýlýr. Admin projede herþeyi yapabilecek konumdadýr. Bu yüzden bu tarafta tüm entitylerin sayfalarý olacaktýr.
+	4.5. MemberArea klsörü açýlýr. Member için Admin'deki gibi yapý izlenir.

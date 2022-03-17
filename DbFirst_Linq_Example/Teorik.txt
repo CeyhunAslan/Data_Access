@@ -1,0 +1,9 @@
+﻿
+
+
+Db First için : 
+1.SQL de kurulu database'imizi uygulamının bu tarafına yansıtmak için katmana / Projeme sağ tıklayıp  Add/Ekle => New Item Add / Yeni Öğe Ekle => Ado .Net Entity Data Model ekleyelim. (isim fark etmez)
+2."Entity Database Model Wizard" penceresinden => EF Designer From Database seçelim.
+3."New Connection" buttoınundan servername seçip (yoksa SQL aç ordan kopyala yapıştır) o serverda var olan "db" lerden çalışmak istediğimizi yani uygulama tarafına yansıtmak istediğimizi  aşağıdaki combobox'dan seçelim.
+4."Pluraliz or Singularize generated object names" Yani db'de çoğul olarak isimlendirilen tablolarımı(Products) Uygulama tarafında tekil olsun (Product)
+
